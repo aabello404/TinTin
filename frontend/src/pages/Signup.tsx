@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import styles from "./Auth.module.css";
 
-const API_BASE_URL = import.meta.env.NEST_URL ?? "http://localhost:3000";
+const API_BASE_URL = import.meta.env.VITE_NEST_URL;
 
 const Signup = () => {
   const [name, setName] = useState("");

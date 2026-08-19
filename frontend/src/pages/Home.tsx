@@ -22,7 +22,8 @@ const Home = () => {
   useEffect(() => {
     const fetchListings = async () => {
       try {
-        const response = await fetch("http://localhost:3000/listings");
+        const API_BASE_URL = import.meta.env.VITE_NEST_URL;
+        const response = await fetch(`${API_BASE_URL}/listings`);
         const data = await response.json();
         setProducts(data);
       } catch (error) {

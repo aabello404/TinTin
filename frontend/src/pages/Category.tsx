@@ -18,7 +18,8 @@ const Category = () => {
     const fetchCategoryListings = async () => {
       setLoading(true);
       try {
-        const response = await fetch(`http://localhost:3000/listings?category=${id}`);
+        const API_BASE_URL = import.meta.env.VITE_NEST_URL;
+        const response = await fetch(`${API_BASE_URL}/listings?category=${id}`);
         const data = await response.json();
         setProducts(data);
       } catch (error) {

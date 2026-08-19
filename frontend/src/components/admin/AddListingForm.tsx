@@ -12,7 +12,7 @@ type AddListingFormProps = {
   onCreated: () => void;
 };
 
-const API_BASE_URL = import.meta.env.NEST_URL ?? "http://localhost:3000";
+const API_BASE_URL = import.meta.env.VITE_NEST_URL;
 
 const AddListingForm = ({ categories, onCreated }: AddListingFormProps) => {
   const [error, setError] = useState("");

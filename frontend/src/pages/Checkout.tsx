@@ -5,7 +5,7 @@ import { useCart } from '../context/CartContext';
 import styles from './Checkout.module.css';
 import { CheckCircle } from 'lucide-react';
 
-const API_BASE_URL = import.meta.env.NEST_URL ?? "http://localhost:3000";
+const API_BASE_URL = import.meta.env.VITE_NEST_URL;
 
 const Checkout = () => {
   const { user, updateUser } = useAuth();
