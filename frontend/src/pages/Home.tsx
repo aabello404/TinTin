@@ -98,7 +98,7 @@ const Home = () => {
           onTouchEnd={handleTouchEnd}
         >
           {featuredShoes.map((shoe, index) => (
-            <Link to={`/product/${shoe.id}`}>
+            <Link to={`/product/${shoe.id}`} key={shoe.id}>
               <div
                 key={shoe.id}
                 className={`${styles.slide} ${index === currentSlide ? styles.active : ""}`}
