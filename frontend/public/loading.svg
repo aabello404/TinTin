@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <!-- Gold gradient for the ring -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D4AF37" />
+      <stop offset="50%" stop-color="#FFF2CD" />
+      <stop offset="100%" stop-color="#B38728" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.35; }
+    }
+    .spinner {
+      animation: spin 1.4s linear infinite;
+      transform-origin: 60px 60px;
+    }
+    .monogram {
+      animation: pulse 2s ease-in-out infinite;
+    }
+  </style>
+
+  <!-- Rotating gold ring -->
+  <g class="spinner">
+    <circle cx="60" cy="60" r="50" fill="none" stroke="url(#goldGrad)" stroke-width="4" stroke-linecap="round" stroke-dasharray="85 230" />
+    <circle cx="60" cy="60" r="44" fill="none" stroke="#E0E0E0" stroke-width="1.5" stroke-dasharray="20 250" stroke-linecap="round" />
+  </g>
+
+  <!-- Central monogram (T inside diamond) -->
+  <g class="monogram">
+    <!-- Diamond outline -->
+    <polygon points="60,35 75,60 60,85 45,60" fill="none" stroke="#111111" stroke-width="2.5" />
+    
+    <!-- T crossbar with angled tips -->
+    <path d="M 47 55 L 73 55 L 70 63 L 50 63 Z" fill="#111111" />
+    
+    <!-- T stem -->
+    <rect x="56" y="63" width="8" height="22" fill="#111111" />
+  </g>
+</svg>

@@ -1,0 +1,83 @@
+.authContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 200px);
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+.authCard {
+  background: white;
+  padding: 3rem 2.5rem;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.authImage {
+  width: 150px;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.error {
+  color: var(--error-color);
+  font-size: 0.8rem;
+}
+
+.success {
+  color: #237a45;
+  background-color: #eaf7ef;
+  border: 1px solid #a9d9b9;
+  padding: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.submitBtn {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.toggleLink {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.toggleLink a {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.toggleLink a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,188 @@
+.productContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 3rem 0;
+  margin-bottom: 25px !important;
+}
+
+@media (min-width: 768px) {
+  .productContainer {
+    flex-direction: row;
+  }
+}
+
+.imageSection {
+  flex: 1;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  touch-action: pan-y;
+}
+
+.imageSection img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+  border: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  padding: 0;
+}
+
+.navButton:hover {
+  background-color: white;
+}
+
+.navButton .navIcon {
+  width: 24px;
+  height: 24px;
+  max-width: 24px;
+  display: block;
+  object-fit: contain;
+  opacity: 1;
+}
+
+.navButton.prev {
+  left: 1rem;
+}
+
+.navButton.next {
+  right: 1rem;
+}
+
+@media (max-width: 768px) {
+  .navButton {
+    display: none;
+  }
+}
+
+.imageIndicators {
+  position: absolute;
+  bottom: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.indicator.active {
+  background-color: var(--primary-color);
+}
+
+.detailsSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.description {
+  line-height: 1.6;
+  color: #444;
+}
+
+.sizeSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sizeSection h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.sizeGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.sizeBtn {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+  background-color: white;
+  color: var(--text-color);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sizeBtn:hover {
+  border-color: var(--primary-color);
+}
+
+.sizeBtn.selected {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.addToBasketBtn {
+  flex: 2;
+  font-size: 1.1rem;
+  border-radius: 9px;
+}
+
+.wishlistBtn {
+  flex: 1;
+  background-color: white;
+  border: 1px solid var(--border-color);
+  color: var(--primary-color);
+  border-radius: 9px;
+}
+
+.wishlistBtn:hover {
+  background-color: #f5f5f5;
+}
