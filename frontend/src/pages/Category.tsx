@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import ProductCard from '../components/ProductCard';
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import ProductCard from "../components/ProductCard";
 
 type Listing = {
   id: string;
@@ -13,7 +13,11 @@ const Category = () => {
   const { id } = useParams();
   const [products, setProducts] = useState<Listing[]>([]);
   const [loading, setLoading] = useState(true);
-
+  useEffect(() => {
+    if (id == "men") document.title = "Men's | TinTin";
+    else if (id == "women") document.title = "Women's | TinTin";
+    else document.title = "Kid's | TinTin";
+  }, []);
   useEffect(() => {
     const fetchCategoryListings = async () => {
       setLoading(true);
@@ -23,38 +27,53 @@ const Category = () => {
         const data = await response.json();
         setProducts(data);
       } catch (error) {
-        console.error('Failed to fetch category listings', error);
+        console.error("Failed to fetch category listings", error);
       } finally {
         setLoading(false);
       }
     };
-    
-    if (id !== 'women' && id !== 'kids') {
+
+    if (id !== "women" && id !== "kids") {
       fetchCategoryListings();
     } else {
       setLoading(false);
     }
   }, [id]);
 
-  if (id === 'women' || id === 'kids') {
+  if (id === "women" || id === "kids") {
     return (
-      <div className="container" style={{ padding: '4rem 0', textAlign: 'center', minHeight: '50vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div
+        className="container"
+        style={{
+          padding: "4rem 0",
+          textAlign: "center",
+          minHeight: "50vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         <h2>check back nothing here yet!</h2>
       </div>
     );
   }
 
   return (
-    <div className="container" style={{ padding: '3rem 0' }}>
-      <h2 style={{ textTransform: 'uppercase', marginBottom: '2rem' }}>{id} Collection</h2>
+    <div className="container" style={{ padding: "3rem 0" }}>
+      <h2 style={{ textTransform: "uppercase", marginBottom: "2rem" }}>
+        {id} Collection
+      </h2>
       <div className="grid-auto-fit">
         {loading ? (
           <p>Loading...</p>
         ) : products.length > 0 ? (
-          products.map(product => (
-            <ProductCard 
-              key={product.id} 
-              product={{ ...product, image: product.images?.[0]?.url || '/hero.png' }} 
+          products.map((product) => (
+            <ProductCard
+              key={product.id}
+              product={{
+                ...product,
+                image: product.images?.[0]?.url || "/hero.png",
+              }}
             />
           ))
         ) : (

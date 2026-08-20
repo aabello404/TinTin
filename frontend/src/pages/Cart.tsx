@@ -2,10 +2,13 @@ import { Link } from 'react-router-dom';
 import { Trash2, Minus, Plus } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import styles from './Cart.module.css';
+import { useEffect } from 'react';
 
 const Cart = () => {
   const { cart, removeFromCart, addToCart } = useCart();
-
+    useEffect(() => {
+      document.title = "Cart | TinTin";
+    }, []);
   const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
   const delivery = subtotal > 0 ? 5000 : 0; // Flat delivery fee if cart is not empty
   const total = subtotal + delivery;

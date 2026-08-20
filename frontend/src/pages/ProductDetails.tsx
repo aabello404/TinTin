@@ -15,6 +15,9 @@ type Listing = {
 };
 
 const ProductDetails = () => {
+    useEffect(() => {
+      document.title = "Product | TinTin";
+    }, []);
   const { id } = useParams();
   const navigate = useNavigate();
   const { addToCart, wishlist, addToWishlist, removeFromWishlist } = useCart();

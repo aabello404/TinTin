@@ -33,6 +33,9 @@ type CategoryOption = {
 const API_BASE_URL = import.meta.env.VITE_NEST_URL;
 
 const Dashboard = () => {
+    useEffect(() => {
+      document.title = "Dashboard | TinTin";
+    }, []);
   const { user } = useAuth();
   const navigate = useNavigate();
   const [data, setData] = useState<DashboardData | null>(null);

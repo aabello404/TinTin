@@ -6,6 +6,9 @@ import styles from "./Profile.module.css";
 const API_BASE_URL = import.meta.env.VITE_NEST_URL;
 
 const Profile = () => {
+    useEffect(() => {
+      document.title = "Profile | TinTin";
+    }, []);
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);

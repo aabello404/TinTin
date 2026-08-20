@@ -12,6 +12,9 @@ type Listing = {
 };
 
 const Home = () => {
+    useEffect(() => {
+      document.title = "TinTin";
+    }, []);
   const location = useLocation();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [touchStart, setTouchStart] = useState<number | null>(null);

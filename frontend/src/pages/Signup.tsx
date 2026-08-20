@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import styles from "./Auth.module.css";
@@ -6,6 +6,9 @@ import styles from "./Auth.module.css";
 const API_BASE_URL = import.meta.env.VITE_NEST_URL;
 
 const Signup = () => {
+  useEffect(() => {
+    document.title = "Sign up | TinTin";
+  }, []);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
